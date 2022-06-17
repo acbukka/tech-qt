@@ -1,0 +1,42 @@
+a {
+  text-decoration: none;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: sans-serif;
+  box-sizing: border-box;
+}
+
+.body {
+  background-image: url(../assets/Pattern.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.main {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.container {
+  margin-top: 50%;
+  max-width: 1280px;
+  padding: 0 80px;
+  margin: 0 auto;
+}
+
+.cards-wrapper {
+  width: 1120px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-item {
+  width: 320px;
+  height: 480px;
+  background-color: #fff;
+
+}
