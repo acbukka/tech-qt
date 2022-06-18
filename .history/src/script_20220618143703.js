@@ -17,7 +17,8 @@ card.forEach((item) => item.addEventListener('click', (e) => {
     a.setAttribute('href', '#');
     a.className = 'card-inner__info-link';
     a.innerHTML = 'купи.';
-    cardInfo[whatElement].appendChild(a);
+    cardInfo[whatElement].textContent + a;
+    // cardInfo[whatElement] = cardInfoExample[whatElement].textContent;
   } else if (!element.classList.contains('selected') && !element.classList.contains('disabled')){
     element.classList.add('selected')
     switch (whatElement) {
@@ -41,7 +42,7 @@ const randomDis = () => {
     num = (Math.trunc(Math.random() * 3) + 1)
   }
   card[num - 1].classList.add('disabled');
-  cardInfo[num - 1].textContent = `Печалька, ${cardInfoSpan[num - 1].textContent} закончился.`;
+  cardInfo[num - 1].textContent = `Печалька, c ${cardInfoSpan[num - 1].textContent} закончился.`;
   cardInfo[num - 1].style.color = '#FFFF66'
 }
 

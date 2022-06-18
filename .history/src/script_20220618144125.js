@@ -18,6 +18,7 @@ card.forEach((item) => item.addEventListener('click', (e) => {
     a.className = 'card-inner__info-link';
     a.innerHTML = 'купи.';
     cardInfo[whatElement].appendChild(a);
+    // cardInfo[whatElement] = cardInfoExample[whatElement].textContent;
   } else if (!element.classList.contains('selected') && !element.classList.contains('disabled')){
     element.classList.add('selected')
     switch (whatElement) {

@@ -12,12 +12,7 @@ card.forEach((item) => item.addEventListener('click', (e) => {
   console.log(cardInfo[whatElement].textContent);
   if (element.classList.contains('selected')) {
     element.classList.remove('selected')
-    cardInfo[whatElement].textContent = 'Чего сидишь? Порадуй котэ, '
-    let a = document.createElement('a');
-    a.setAttribute('href', '#');
-    a.className = 'card-inner__info-link';
-    a.innerHTML = 'купи.';
-    cardInfo[whatElement].appendChild(a);
+    // cardInfo[whatElement] = cardInfoExample[whatElement].textContent;
   } else if (!element.classList.contains('selected') && !element.classList.contains('disabled')){
     element.classList.add('selected')
     switch (whatElement) {
@@ -32,6 +27,8 @@ card.forEach((item) => item.addEventListener('click', (e) => {
         break
     }
     console.log(whatElement);
+    // if ()
+    // cardInfo.textContent = ''
   }
 }))
 
@@ -41,7 +38,7 @@ const randomDis = () => {
     num = (Math.trunc(Math.random() * 3) + 1)
   }
   card[num - 1].classList.add('disabled');
-  cardInfo[num - 1].textContent = `Печалька, ${cardInfoSpan[num - 1].textContent} закончился.`;
+  cardInfo[num - 1].textContent = `Печалька, c ${cardInfoSpan[num - 1].textContent} закончился.`;
   cardInfo[num - 1].style.color = '#FFFF66'
 }
 
