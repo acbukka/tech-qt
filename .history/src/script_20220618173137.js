@@ -45,6 +45,7 @@ const randomDis = () => {
   cardInfo[num - 1].style.color = '#FFFF66'
 }
 
+
 card.forEach((item) => item.addEventListener('mouseenter', (e) => {
   const element = e.target.closest('.card-item');
   const whatElement = Array.prototype.slice.call(card).indexOf(element);
@@ -62,5 +63,6 @@ card.forEach((item) => item.addEventListener('mouseleave', (e) => {
   cardPreTitle[whatElement].textContent = 'Сказочное заморское яство';
   cardPreTitle[whatElement].style.color = '#666666';
 }))
+
 
 document.addEventListener('DOMContentLoaded', randomDis)

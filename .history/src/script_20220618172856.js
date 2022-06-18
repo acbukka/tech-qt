@@ -19,8 +19,6 @@ card.forEach((item) => item.addEventListener('click', (e) => {
     cardInfo[whatElement].appendChild(a);
   } else if (!element.classList.contains('selected') && !element.classList.contains('disabled')){
     element.classList.add('selected')
-    cardPreTitle[whatElement].textContent = 'Котэ не одобряет?';
-    cardPreTitle[whatElement].style.color = '#E62E7A';
     switch (whatElement) {
       case 0:
         cardInfo[whatElement].textContent = 'Печень утки разварная с артишоками.'
@@ -45,6 +43,7 @@ const randomDis = () => {
   cardInfo[num - 1].style.color = '#FFFF66'
 }
 
+
 card.forEach((item) => item.addEventListener('mouseenter', (e) => {
   const element = e.target.closest('.card-item');
   const whatElement = Array.prototype.slice.call(card).indexOf(element);
@@ -52,15 +51,20 @@ card.forEach((item) => item.addEventListener('mouseenter', (e) => {
     cardPreTitle[whatElement].textContent = 'Котэ не одобряет?';
     cardPreTitle[whatElement].style.color = '#E62E7A';
   } else {
-    cardPreTitle[whatElement].textContent = 'Сказочное заморское яство';
-    cardPreTitle[whatElement].style.color = '#666666';
+    cardPreTitle[whatElement].textContent = 'Котэ не одобряет?';
+    cardPreTitle[whatElement].style.color = '#E62E7A';
   }
 }))
 card.forEach((item) => item.addEventListener('mouseleave', (e) => {
   const element = e.target.closest('.card-item');
   const whatElement = Array.prototype.slice.call(card).indexOf(element);
-  cardPreTitle[whatElement].textContent = 'Сказочное заморское яство';
-  cardPreTitle[whatElement].style.color = '#666666';
+  if (element.classList.contains('selected')) {
+    cardPreTitle[whatElement].textContent = 'Сказочное заморское яство';
+    cardPreTitle[whatElement].style.color = '#666666';
+  } else {
+    return;
+  }
 }))
+
 
 document.addEventListener('DOMContentLoaded', randomDis)
